@@ -2,6 +2,8 @@
 
 Select a local folder (or multiple image files) and preview all images in a fast, responsive grid. Everything runs 100% in your browser—no uploads.
 
+**Live demo:** [Folder Image Viewer](https://abhishek-singh77.github.io/blob-to-image-viewer/)
+
 ## Features
 
 -   Folder selection (Chromium-based browsers) and multi-file selection fallback
