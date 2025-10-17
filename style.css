@@ -1,0 +1,168 @@
+:root {
+    --bg: #0b0d12;
+    --panel: #131720;
+    --text: #e6edf3;
+    --muted: #9aa4b2;
+    --accent: #4ba3ff;
+    --border: #222839;
+    --card: #0f131b;
+}
+
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+    background: var(--bg);
+    color: var(--text);
+}
+
+.app-header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(11, 13, 18, 0.9),
+        rgba(11, 13, 18, 0.7) 70%,
+        rgba(11, 13, 18, 0)
+    );
+    backdrop-filter: blur(6px);
+    padding: 16px 16px 8px;
+    border-bottom: 1px solid var(--border);
+}
+.title {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+}
+.spacer {
+    flex: 1;
+}
+.count {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.button {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.button:hover {
+    background: #171c27;
+    border-color: #2a3550;
+}
+.button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #071423;
+}
+.button.subtle {
+    opacity: 0.8;
+}
+
+.search {
+    flex: 1;
+    min-width: 220px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+main {
+    padding: 16px;
+}
+.dropzone {
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: var(--muted);
+    background: rgba(19, 23, 32, 0.5);
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+.dropzone.dragover {
+    border-color: var(--accent);
+    background: rgba(75, 163, 255, 0.1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+.thumb {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background: #0a0d13;
+}
+.meta {
+    padding: 8px;
+    font-size: 12px;
+    color: var(--muted);
+}
+.name {
+    color: var(--text);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.path {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.app-footer {
+    padding: 16px;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+@media (min-width: 1200px) {
+    .thumb {
+        height: 180px;
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Folder Image Viewer</title>
+        <meta
+            name="description"
+            content="Select a folder of images and preview them in a responsive grid." />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%93%84%3C/text%3E%3C/svg%3E" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="app-header">
+            <h1 class="title">Folder Image Viewer</h1>
+            <div class="controls">
+                <input
+                    id="folderInput"
+                    type="file"
+                    webkitdirectory
+                    directory
+                    multiple
+                    hidden />
+                <label for="folderInput" class="button primary"
+                    >Select Folder</label
+                >
+
+                <input
+                    id="filesInput"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    hidden />
+                <label for="filesInput" class="button">Or Select Images</label>
+
+                <button id="clearBtn" class="button subtle" type="button">
+                    Clear
+                </button>
+            </div>
+            <div class="toolbar">
+                <input
+                    id="searchInput"
+                    class="search"
+                    type="search"
+                    placeholder="Search by name or path" />
+                <div class="spacer"></div>
+                <span id="count" class="count">0 images</span>
+            </div>
+        </header>
+
+        <main>
+            <div id="dropZone" class="dropzone" aria-label="Drop images here">
+                <p>Drop files here, or use the buttons above.</p>
+            </div>
+            <section id="gallery" class="gallery" aria-live="polite"></section>
+        </main>
+
+        <footer class="app-footer">
+            <small>
+                Works offline. Your files never leave your browser. Best on
+                Chromium-based browsers for folder selection. Safari/Firefox:
+                use "Or Select Images".
+            </small>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
