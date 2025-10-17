@@ -12,6 +12,14 @@ Select a local folder (or multiple image files) and preview all images in a fast
 -   Search by name or relative path
 -   Zero build tooling, pure HTML/CSS/JS
 
+## Handling unknown blob files
+
+You can now select any file type. The app detects images even when the MIME type or extension is missing by:
+
+-   Checking common image extensions
+-   Inspecting magic bytes (PNG/JPG/GIF/WebP/BMP/AVIF)
+-   Falling back to attempting an image decode in-memory
+
 ## Run locally
 
 Just open `index.html` in your browser. No server required.
@@ -51,4 +59,5 @@ After the workflow completes, your site URL will appear under the Pages section 
 ## License
 
 MIT
+
 # blob-to-image-viewer
